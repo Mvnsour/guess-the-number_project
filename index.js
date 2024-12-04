@@ -16,3 +16,8 @@ Let's get started! 🚀`
 let targetNumber = Math.floor(Math.random() * 3); //random number generated between 0 and 100, Math.floor() is used to round the number and get a whole number
 let attemptCount = 0; 
 console.log(targetNumber);  // to see the result
+
+function isValidNumber(number) {
+  // check if the number entered is really a number and if it's a number between 0 and 100
+    return !Number.isNaN(number) && number >= 0 && number <= 3;
+    }
