@@ -33,12 +33,12 @@ function guessingGame() {
   }
 
   if (userInput < targetNumber) {
-    console.log(`The number entered "${userInput}" is too small. Try again.\n`)
+    console.log(`The number entered "${userInput}" is too small. Try again.\n`);
     guessingGame(); 
   }
 
   if (userInput > targetNumber) {
-    console.log(`The number entered "${userInput}" is too big. Try again.\n`)
+    console.log(`The number entered "${userInput}" is too big. Try again.\n`);
     guessingGame(); 
   }
 
@@ -46,9 +46,25 @@ function guessingGame() {
 
 /* we can also do without condition because it is the last option after previous checks */ 
 
-    console.log(`Congratulations ! ${userInput} was the random number.`)
-    console.log(`You tried ${attemptCount} times.`);
+    console.log(`Congratulations ! ${userInput} was the random number.`);
+    console.log(`You tried ${attemptCount} times.\n\n`);
   }
 }
 
-guessingGame();
+function replayGame() {
+const choice = prompt("Do you want to play again ? (y/n) : ")
+
+  if (choice === "y") {
+    console.log("Here we go again !\n\n");
+    guessingGame();
+  } else if (choice === "n") {
+    console.log("Thank you for playing ! Goodbye");
+    return;
+  } else {
+      console.log(`I don't understand your choice. Please, choose between "y" and "n".\n`);
+      replayGame();
+    }
+  }
+
+  guessingGame();
+  replayGame();
