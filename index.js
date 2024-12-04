@@ -13,12 +13,6 @@ Rules:
 Let's get started! 🚀`
 );
 
-function isValidNumber(number) {
-  if (Number.isNaN(number) && number >= 0 && number <= 100) {
-    return `Error. ${number} is invalid. The number must be between 0 and 100.\n`
-  }
-}
-
-let targetNumber = Math.floor(Math.random() * 100); //random number generated between 0 and 100, Math.floor() is used to round the number and get a whole number
+let targetNumber = Math.floor(Math.random() * 3); //random number generated between 0 and 100, Math.floor() is used to round the number and get a whole number
+let attemptCount = 0; 
 console.log(targetNumber);  // to see the result
-let attemptCount = 0;
