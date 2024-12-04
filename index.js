@@ -33,15 +33,22 @@ function guessingGame() {
   }
 
   if (userInput < targetNumber) {
-    console.log(`The number entered : "${userInput}" is too small. Try again.\n`)
-    guessingGame(); 
-  }
-  
-  if (userInput > targetNumber) {
-    console.log(`The number entered : "${userInput}" is too big. Try again.\n`)
+    console.log(`The number entered "${userInput}" is too small. Try again.\n`)
     guessingGame(); 
   }
 
+  if (userInput > targetNumber) {
+    console.log(`The number entered "${userInput}" is too big. Try again.\n`)
+    guessingGame(); 
+  }
+
+  if (userInput === targetNumber) {
+
+/* we can also do without condition because it is the last option after previous checks */ 
+
+    console.log(`Congratulations ! ${userInput} was the random number.`)
+    console.log(`You tried ${attemptCount} times.`);
+  }
 }
 
 guessingGame();
