@@ -27,9 +27,14 @@ function guessingGame() {
   attemptCount++; // incrementation of attempt atfer the user input
 
   if (!isValidNumber(userInput)) { // using "!" means negation 
-    console.log(`is an invalid number. It must be a number between 0 and 100.`);
-    guessingGame(); // calling the func to ask again the user, recursive func
+    console.log(`${userInput} is an invalid number. It must be a number between 0 and 100.`);
+    guessingGame(); // calling the func to ask again the user, recursive function
     return; // to stop the script
+  }
+
+  if (userInput < targetNumber) {
+    console.log(`The number enterd : "${userInput}" is too small. Try again.`)
+    guessingGame(); 
   }
 }
 
