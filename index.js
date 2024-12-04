@@ -18,6 +18,19 @@ let attemptCount = 0;
 console.log(targetNumber);  // to see the result
 
 function isValidNumber(number) {
-  // check if the number entered is really a number and if it's a number between 0 and 100
-    return !Number.isNaN(number) && number >= 0 && number <= 3;
-    }
+// check if the number entered is really a number and if it's a number between 0 and 100
+  return !Number.isNaN(number) && number >= 0 && number <= 3;
+}
+
+function guessingGame() {
+  const userInput = Number(prompt('Enter a number : '));
+  attemptCount++; // incrementation of attempt atfer the user input
+
+  if (!isValidNumber(userInput)) { // using "!" means negation 
+    console.log(`is an invalid number. It must be a number between 0 and 100.`);
+    guessingGame(); // calling the func to ask again the user, recursive func
+    return; // to stop the script
+  }
+}
+
+guessingGame();
