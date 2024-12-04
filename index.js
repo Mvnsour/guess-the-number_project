@@ -15,18 +15,17 @@ function game() {
   
     if (!isValidNumber(userInput)) { // using "!" means negation 
       console.log(`${userInput} is an invalid number. It must be a number between 0 and 100.\n\n`);
-      guessingGame(); // calling the func to ask again the user, recursive function
-      return; // to stop the script
+      return guessingGame(); // calling the func to ask again the user, recursive function
     }
   
     if (userInput < targetNumber) {
       console.log(`The number entered "${userInput}" is too small. Try again.\n`);
-      guessingGame(); 
+      return guessingGame(); 
     }
   
     if (userInput > targetNumber) {
       console.log(`The number entered "${userInput}" is too big. Try again.\n`);
-      guessingGame(); 
+      return guessingGame(); 
     }
   // correct answer found by the user 
       console.log(`Congratulations ! ${userInput} was the random number.`);
@@ -35,7 +34,7 @@ function game() {
 
   const replayGame = () => {
     const choice = prompt("Do you want to play again ? (y/n) : ")
-  
+
     if (choice === "y") {
       console.log("Here we go again !\n\n");
       guessingGame();
